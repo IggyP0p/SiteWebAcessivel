@@ -1,0 +1,141 @@
+/*  */
+:root {
+    --cor-fundo: #FFF1D6;
+    --cor-titulo: #cff167;
+
+    --header-color: #054f77;
+
+    --articles-fundo:#fff;
+    --articles-titulo: #000;
+    --articles-letra: #000;
+
+}
+
+body {
+    background: var(--cor-fundo) url(img/lovFeira.png);
+    font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, sans-serif;
+    line-height: 1.6;
+    padding-top: 80px;
+    margin: 0;
+}
+
+/* Header do site */
+header {
+    background-color: var(--header-color);
+    position: fixed;
+    display: flex;
+    height: 60px;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.container-header {
+    width: 1280px;
+    display: flex;
+}
+
+header img {
+    width: 80px;
+    height: 45px;
+    border: 1px solid #000;
+    border-radius: 30px;
+    margin-top: 6px;
+    margin-left: 10px;
+}
+
+header h1 {
+    color: var(--cor-titulo);
+    font-size: 24px;
+    margin-left: 100px;
+}
+
+header button {
+    float: right;
+    border: 2px solid;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-top: 10px;
+    margin-left: 400px;
+    background-image:url("/SiteGostoFeira/img/eye.png"), url("/SiteGostoFeira/img/eye2.png");
+    background-position: -39px;
+    background-size: 38px;
+}
+
+/*          RETIRADO
+h1 a {
+    color: #7E9F19;
+    text-decoration: none;
+}
+
+h1 a:hover {
+    color: #111;
+}
+*/
+
+article {
+    background-color: var(--articles-fundo);
+    border-color: #CCC #999 #999 #CCC;
+    border: 1px solid #CCC;
+    margin-bottom: 20px;
+    padding: 10px;
+    color: var(--articles-letra);
+}
+
+article h2 {
+    border-bottom: 1px dashed #000;
+    color: var(--articles-titulo);
+    margin: 0;
+}
+
+article a {
+    color: #2C88A7;
+    font-weight: bold;
+}
+
+article img {
+    border: 1px solid #000;
+    float: left;
+    margin: 10px 10px 0 0;
+    padding: 2px;
+    width: 156px;
+    height: 156px;
+}
+
+/*          RETIRADO
+aside {
+    background-color: #FFFBE4;
+    border: 1px solid #C9BC8F;
+    padding: 10px;
+    float: right;
+    width: 260px;
+}
+
+aside h3 {
+    font-size: 14px;
+    margin-top: 0;
+}
+
+aside ol {
+    font-size: 12px;
+}
+*/
+
+section {
+    /*float: left;*/
+    margin-left: auto;
+    margin-right: auto;
+    width: 960px;
+}
+
+footer {
+    background-color: var(--header-color);
+    height: 180px;
+    padding-top: 20px;
+    width: 100%;
+    font-size: 12px;
+    text-align: center;
+
+}
+
