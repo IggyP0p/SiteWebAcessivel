@@ -12,16 +12,26 @@
     <body>
 
         <!-- Cabeçalho do site -->
-        <header>
+        <header role="banner">
+            <div>
+                <a href="#" id="voltarInicio" class="oculto">Início da página</a>
+            </div>
+
             <div class="container-header">
-                <!-- 
-                <h1><a href="">O que mais gosto em Feira de Santana</a></h1>
-                -->
-                <a href="" target="_self">
-                    <img src="img/bandeiraBrasil.jpg" alt="Bandeira do Brasil feita por Don L">
-                </a>
+                
+                <img src="img/bandeiraBrasil.jpg" alt="Bandeira do Brasil feita por Don L">
                 
                 <h1>O que mais gosto em Feira de Santana</h1>
+
+                <nav role="navigation">
+                    <!-- Âncora para ir direto ao bloco de conteúdo -->
+                    <ul id="atalhos">
+                        <li><a href="#irConteudo" accesskey="1">Ir Conteudo</a></li>
+                        <!--    POSSIVEL USO FUTURO
+                        <li><a href="#irmenu" accesskey="2">Ir para menu principal[2]</a></li>
+                        <li><a href="#irbusca">Ir para busca [3]</a></li>  -->
+                    </ul>
+                </nav>
                 
                 <!-- Barra de acessibilidade -->
                 <div class="acessibilidade">
@@ -44,13 +54,30 @@
                 </div>
             </div>
         </header>
-        <!-- Conteúdo principal -->
+
+        <!-- Introdução do site -->
         <section>
+            <h2>Feira de Santana, a princesa do sertão!</h2>
+            <p>
+                Feira de Santana é um município brasileiro no interior da Bahia, Região Nordeste do Brasil. 
+                É a cidade-sede da Região Metropolitana de Feira de Santana e da Região Imediata de Feira de 
+                Santana, que é formada por 33 cidades. Está localizada no centro-norte baiano, a 108 quilômetros 
+                da capital do estado, Salvador, com a qual se liga através da BR-324.
+            </p>
+            
+        </section>
+
+        <!-- Conteúdo principal -->
+        <section role="main">
+            <!-- Link para ancora "Ir conteudo" -->
+            <div>
+                <a href="#" id="irConteudo" class="oculto">Início do conteúdo</a>
+            </div>
             <h2>Os 3 principais locais para visitar</h2>
 
             <!-- Seção 1 de artigo da página -->
-            <article>
-                <h3>Passear na Avenida Fraga Maia</h3>
+            <article role="article">
+                <h3>Avenida Fraga Maia</h3>
                 <img src="img/fragaMaia.webp" alt="Praça da Avenida Fraga Maia">
                 <p>
                     Próximo a Avenida Maria Quiteria, a avenida Fraga Maia é uma das principais avenidas da cidade,
@@ -61,12 +88,12 @@
                 <p>
                     A Fraga Maia sempre é movimentada, um espaço excelente para quem quer se divertir! O que será que
                     estão falando a respeito no <a href="https://x.com/#!/search/Avenida%20Fraga%20Maia" target="_blank"
-                    aria-label="Pesquisar Avenida Fraga Maia no Twitter (abre em nova janela)">ir para a página de pesquisa do Twitter</a>
+                    aria-label="Pesquisar Avenida Fraga Maia no Twitter (abre em nova janela)">abrir nova página de pesquisa do Twitter</a>
                 </p>
             </article>
 
             <!-- Seção 2 de artigo da página -->
-            <article>
+            <article role="article">
                 <h3>Shopping Popular Feiraguay</h3>
                 <img src="img/Feiraguay.jpeg" alt="O feiraguay">
                 <p>
@@ -77,12 +104,12 @@
                 </p>
                 <p>
                     Veja as principais noticias da região! <a href='https://www.instagram.com/feiraguayfs.oficial/'
-                    target='_blank' >ir para a página do Instagram do Feiraguay</a>
+                    target='_blank' >abrir nova página do Instagram do Feiraguay</a>
                 </p>
             </article>
 
             <!-- Seção 3 de artigo da página -->
-            <article>
+            <article role="article">
                 <h3>Parque Municipal Erivaldo Cerqueira</h3>
                 <img src="img/ParqueErivaldo.jpg" alt="Imagem do parque erivaldo com plantas">
                 <p>
@@ -92,14 +119,16 @@
                     vejam!
                 </p>
                 <p>
-                    Veja como chegar ao parque:<a href="https://maps.app.goo.gl/HHP4XPe7hx5aUQg78" target="_blank" >ir para a localização 
+                    Veja como chegar ao parque: <a href="https://maps.app.goo.gl/HHP4XPe7hx5aUQg78" target="_blank" >abrir nova página para a localização 
                     no google maps</a>
                 </p>
             </article>
+            <!-- Link para retornar ao inicio da pagina -->
+            <a href="#voltarInicio" accesskey="2">voltarInicio</a>
         </section>
 
         <!-- Rodape do site -->
-        <footer>
+        <footer role="contentinfo">
             <section>
                 <img src="img/simbolo_acessibilidade.png" alt="Simbolo Internacional da Acessibilidade">
                 <h2>IFBA campus Feira de Santana</h2>
