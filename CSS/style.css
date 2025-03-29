@@ -84,7 +84,7 @@ article {
     color: var(--articles-letra);
 }
 
-article h2 {
+article h3 {
     border-bottom: 1px dashed #000;
     color: var(--articles-titulo);
     margin: 0;
