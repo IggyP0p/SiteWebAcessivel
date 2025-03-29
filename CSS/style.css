@@ -155,3 +155,101 @@ footer img{
     float: left;
     margin-top: 10px;
 }
+
+/* Estilos para acessibilidade */
+.acessibilidade {
+    display: flex;
+    margin-left: auto;
+    margin-right: 20px;
+    align-items: center;
+}
+
+.acessibilidade button {
+    background-color: #fff;
+    border: 1px solid #888;
+    border-radius: 4px;
+    margin: 0 5px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.acessibilidade button:hover {
+    background-color: #eee;
+}
+
+.acessibilidade button.ativo {
+    background-color: #cff167;
+    border-color: #000;
+}
+
+/* Classes para acessibilidade */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* Ícones simplificados para os botões */
+.icon-contrast::before {
+    content: "C";
+    font-weight: bold;
+}
+
+.icon-font-plus::before {
+    content: "A+";
+    font-weight: bold;
+}
+
+.icon-font-minus::before {
+    content: "A-";
+    font-weight: bold;
+}
+
+.icon-audio::before {
+    content: "🔊";
+}
+
+/* Alto contraste */
+body.alto-contraste {
+    background: #000;
+    color: #fff;
+}
+
+body.alto-contraste article {
+    background-color: #000;
+    color: #fff;
+    border-color: #fff;
+}
+
+body.alto-contraste article h2 {
+    color: #fff;
+    border-bottom-color: #fff;
+}
+
+body.alto-contraste a {
+    color: #ffff00;
+}
+
+body.alto-contraste header,
+body.alto-contraste footer {
+    background-color: #333;
+}
+
+/* Tamanhos de fonte */
+body.fonte-maior {
+    font-size: 120%;
+}
+
+body.fonte-enorme {
+    font-size: 150%;
+}
