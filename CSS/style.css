@@ -1,39 +1,67 @@
-/*  */
+/* Variáveis e reset */
 :root {
     --cor-fundo: #FFF1D6;
     --cor-titulo: #cff167;
-
     --header-color: #103549;
-
-    --articles-fundo:#fff;
+    --button-color: #397392;
+    --articles-fundo: #fff;
     --articles-titulo: #000;
     --articles-letra: #000;
-
 }
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Body */
 body {
-    background: var(--cor-fundo) url(img/lovFeira.png);
+    background: var(--cor-fundo) url(img/lovFeira.png) no-repeat center center;
+    background-size: cover;
     font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, sans-serif;
     line-height: 1.6;
-
-    margin: 0;
 }
 
-/* Header do site */
+/* Header */
 header {
     background-color: var(--header-color);
-
     display: flex;
-    height: 60px;
-    top: 0;
-    left: 0;
-    right: 0;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
 }
 
-#atalhos {
-    list-style-type: none;
-    margin-top: 17px;
+.container-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+}
 
+header img {
+    width: 80px;
+    height: auto;
+    border: 1px solid #000;
+    border-radius: 30px;
+    margin: 5px;
+}
+
+header h1 {
+    color: var(--cor-titulo);
+    font-size: 24px;
+    flex: 1 1 auto;
+    text-align: center;
+    margin: 5px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 5px;
 }
 
 li a {
@@ -41,7 +69,7 @@ li a {
     color: #000;
     border: 2px solid #000;
     border-radius: 10px;
-    padding: 6px;
+    padding: 6px 10px;
     background-color: hotpink;
 }
 
@@ -49,67 +77,52 @@ li a:hover {
     background-color: chartreuse;
 }
 
-.container-header {
-    width: 1280px;
+/* Acessibilidade */
+.acessibilidade {
     display: flex;
+    gap: 10px;
+    align-items: center;
+    margin: 5px;
 }
 
-header img {
-    width: 80px;
-    height: 45px;
-    border: 1px solid #000;
-    border-radius: 30px;
-    margin-top: 6px;
-    margin-left: 10px;
-}
-
-header h1 {
-    color: var(--cor-titulo);
-    font-size: 24px;
-    margin-left: 100px;
-}
-
-header button {
-    float: right;
-    border: 2px solid;
-    border-radius: 50%;
+.acessibilidade button {
+    background-color: #fff;
+    border: 1px solid #888;
+    border-radius: 4px;
     width: 40px;
     height: 40px;
-    margin-top: 10px;
-    margin-left: 400px;
-    background-image:url("/SiteGostoFeira/img/eye.png"), url("/SiteGostoFeira/img/eye2.png");
-    background-position: -39px;
-    background-size: 38px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-section img{
-    border: 1px solid #000;
-    padding: 4px;
-    width: 456px;
-    height: 326px;
-    border-radius: 10px;
-    background-color: #103549;
+.acessibilidade button:hover {
+    background-color: #eee;
 }
 
-/*          RETIRADO
-h1 a {
-    color: #7E9F19;
-    text-decoration: none;
+/* Seção principal */
+main {
+    max-width: 960px;
+    width: 90%;
+    margin: 20px auto;
+    padding: 10px;
 }
 
-h1 a:hover {
-    color: #111;
-}
-*/
-
-.oculto {
-    position: absolute; 
-    left: -999em;
+/* Introdução */
+.introducao h2 {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
+.introducao p {
+    text-align: justify;
+}
+
+/* Artigos */
 article {
     background-color: var(--articles-fundo);
-    border-color: #CCC #999 #999 #CCC;
     border: 2px solid #CCC;
     border-radius: 10px;
     margin-bottom: 20px;
@@ -120,108 +133,60 @@ article {
 article h3 {
     border-bottom: 1px dashed #000;
     color: var(--articles-titulo);
-    margin: 0;
+    margin-bottom: 10px;
+}
+
+article p {
+    margin-bottom: 10px;
 }
 
 article a {
     color: #2C88A7;
     font-weight: bold;
-
 }
 
+/* Imagens dentro dos artigos e seções */
+.img-content img,
 article img {
+    width: 100%;
+    height: auto;
+    max-width: 456px;
     border: 1px solid #000;
-    float: left;
-    margin: 10px 10px 0 0;
-    padding: 2px;
-    width: 156px;
-    height: 156px;
     border-radius: 10px;
+    display: block;
+    margin: 10px auto;
 }
 
-/*          RETIRADO
-aside {
-    background-color: #FFFBE4;
-    border: 1px solid #C9BC8F;
-    padding: 10px;
-    float: right;
-    width: 260px;
-}
-
-aside h3 {
-    font-size: 14px;
-    margin-top: 0;
-}
-
-aside ol {
-    font-size: 12px;
-}
-*/
-
-section {
-    /*float: left;*/
-    margin-left: auto;
-    margin-right: auto;
-    width: 960px;
-}
-
+/* Footer */
 footer {
     background-color: var(--header-color);
-    height: 180px;
-    padding-top: 20px;
-    width: 100%;
-    font-size: 12px;
+    padding: 20px;
     text-align: center;
+    color: #fff;
     display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-footer h1{
-    color: var(--cor-titulo);
-    font-size: 24px;
-    margin-top: 0px;
-}
-
-footer img{
-    height: 80px;
+footer img {
     width: 80px;
+    height: auto;
     border: solid #fff;
     background-color: #fff;
-    float: left;
-    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
-/* Estilos para acessibilidade */
-.acessibilidade {
-    display: flex;
-    margin-left: auto;
-    margin-right: 20px;
-    align-items: center;
+footer h1,
+footer h2 {
+    font-size: 1.5rem;
 }
 
-.acessibilidade button {
-    background-color: #fff;
-    border: 1px solid #888;
-    border-radius: 4px;
-    margin: 0 5px;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+/* Utilitários */
+.oculto {
+    position: absolute;
+    left: -999em;
 }
 
-.acessibilidade button:hover {
-    background-color: #eee;
-}
-
-.acessibilidade button.ativo {
-    background-color: #cff167;
-    border-color: #000;
-}
-
-/* Classes para acessibilidade */
 .sr-only {
     position: absolute;
     width: 1px;
@@ -233,7 +198,7 @@ footer img{
     border: 0;
 }
 
-/* Ícones simplificados para os botões */
+/* Ícones dos botões */
 .icon-contrast::before {
     content: "C";
     font-weight: bold;
@@ -286,4 +251,69 @@ body.fonte-maior {
 
 body.fonte-enorme {
     font-size: 150%;
+}
+
+/* Botão de voltar ao início */
+button.btn {
+    width: 100%;
+    margin-bottom: 1%;
+    background-color: var(--button-color);
+    font-weight: bold;
+    font-size: larger;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        height: auto;
+        text-align: center;
+    }
+    .container-header {
+        flex-direction: column;
+        align-items: center;
+    }
+    header h1 {
+        margin-left: 0;
+    }
+    nav ul {
+        flex-direction: column;
+        gap: 5px;
+    }
+    section {
+        width: 95%;
+    }
+    article {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 5px;
+    }
+    header h1 {
+        font-size: 1.5rem;
+        margin: 5px 0;
+    }
+    nav ul {
+        flex-direction: column;
+        font-size: 0.9rem;
+    }
+    .acessibilidade {
+        flex-wrap: wrap;
+        gap: 5px;
+        justify-content: center;
+    }
+    .img-content img,
+    article img {
+        max-width: 100%;
+    }
+    footer {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
 }
