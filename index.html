@@ -1,160 +1,132 @@
 <!doctype html>
 <html lang="pt-BR">
-    <head>
-        <!-- Tags do head aqui -->
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Site sobre lugares interessantes em Feira de Santana">
-        <title>Gosto em Feira de Santana</title>
-        <link rel="stylesheet" href="CSS/style.css" />
-        <link rel="icon" href='img/bandeiraBrasil.jpg'>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    </head>
-    <body>
-
-
-        <!-- Cabeçalho do site -->
-        <header role="banner">
-            <div style="position: absolute; top: 0; left: 0; visibility: hidden;">
-                <a href="#" id="voltarInicio"  class="oculto">Início da página</a>
-            </div>
-
-            <div class="container-header">
-                
-                <img src="img/bandeiraBrasil.jpg" alt="Bandeira do Brasil feita por Don L">
-                
-                <h1>O que mais gosto em Feira de Santana</h1>
-
-                <nav role="navigation">
-                    <!-- Âncora para ir direto ao bloco de conteúdo -->
-                    <ul id="atalhos">
-                        <li><a href="#irConteudo" accesskey="1">Ir Conteudo</a></li>
-                        <!--    POSSIVEL USO FUTURO
-                        <li><a href="#irmenu" accesskey="2">Ir para menu principal[2]</a></li>
-                        <li><a href="#irbusca">Ir para busca [3]</a></li>  -->
-                    </ul>
-                </nav>
-                
-                <!-- Barra de acessibilidade -->
-                <div class="acessibilidade">
-                    <button id="contraste" type="button" aria-label="Ativar alto contraste">
-                        <span class="sr-only">Contraste</span>
-                        <i class="icon-contrast"></i>
-                    </button>
-                    <button id="aumentar-fonte" type="button" aria-label="Aumentar tamanho da fonte">
-                        <span class="sr-only">A+</span>
-                        <i class="icon-font-plus"></i>
-                    </button>
-                    <button id="diminuir-fonte" type="button" aria-label="Diminuir tamanho da fonte">
-                        <span class="sr-only">A-</span>
-                        <i class="icon-font-minus"></i>
-                    </button>
-                    <button id="leitor" type="button" aria-label="Ativar leitor de tela">
-                        <span class="sr-only">Leitor</span>
-                        <i class="icon-audio"></i>
-                    </button>
-                </div>
-            </div>
-        </header>
-
-        <!-- Introdução do site -->
-        <section class="introducao" style="margin-top: 1%;">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Site sobre lugares interessantes em Feira de Santana">
+    <title>O que mais gosto em Feira de Santana</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="icon" href="img/bandeiraBrasil.jpg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+          rel="stylesheet" 
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
+          crossorigin="anonymous">
+  </head>
+  <body>
+    <!-- Skip link visível ao receber foco -->
+    <a href="#conteudo" class="skip-link">Ir para o conteúdo principal</a>
+    
+    <!-- Cabeçalho -->
+    <header role="banner" id="cabecalho">
+      <div class="container-header">
+        <img src="img/bandeiraBrasil.jpg" alt="Bandeira do Brasil feita por Don L">
+        <h1>O que mais gosto em Feira de Santana</h1>
+        <nav role="navigation">
+          <ul id="atalhos">
+            <li><a href="#conteudo" accesskey="1">Ir para conteúdo</a></li>
+            <!-- Possível uso futuro de atalhos -->
+          </ul>
+        </nav>
+        <!-- Barra de acessibilidade -->
+        <div class="acessibilidade">
+          <button id="contraste" type="button" aria-label="Ativar alto contraste">
+            <span class="sr-only">Contraste</span>
+            <i class="icon-contrast"></i>
+          </button>
+          <button id="aumentar-fonte" type="button" aria-label="Aumentar tamanho da fonte">
+            <span class="sr-only">A+</span>
+            <i class="icon-font-plus"></i>
+          </button>
+          <button id="diminuir-fonte" type="button" aria-label="Diminuir tamanho da fonte">
+            <span class="sr-only">A-</span>
+            <i class="icon-font-minus"></i>
+          </button>
+          <button id="leitor" type="button" aria-label="Ativar leitor de tela">
+            <span class="sr-only">Leitor</span>
+            <i class="icon-audio"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+    
+    <!-- Conteúdo Principal -->
+    <main id="conteudo" role="main">
+        <!-- Introdução -->
+        <section class="introducao">
             <h2>Feira de Santana, a princesa do sertão!</h2>
             <p>
-                Feira de Santana é um município brasileiro no interior da Bahia, Região Nordeste do Brasil. 
-                É a cidade-sede da Região Metropolitana de Feira de Santana e da Região Imediata de Feira de 
-                Santana, que é formada por 33 cidades. Está localizada no centro-norte baiano, a 108 quilômetros 
-                da capital do estado, Salvador, com a qual se liga através da BR-324.
+            Feira de Santana é um município brasileiro no interior da Bahia, Região Nordeste do Brasil. 
+            É a cidade-sede da Região Metropolitana de Feira de Santana e da Região Imediata de Feira de 
+            Santana, formada por 33 cidades. Está localizada no centro-norte baiano, a 108 km de Salvador, 
+            conectada pela BR-324.
             </p>
-            
-        </section>
+      </section>
 
-        <!-- Conteúdo principal -->
-        <section role="main">
-            <!-- Link para ancora "Ir conteudo" -->
-            <div style="position: absolute; top: 0; left: 0; visibility: hidden;">
-                <a href="#" id="irConteudo" class="oculto">Início do conteúdo</a>
-            </div>
-            <h2>Os 3 principais locais para visitar</h2>
 
-            <!-- Seção 1 de artigo da página -->
-            <article role="article">
-                <h3>Avenida Fraga Maia</h3>
-                <div class="img-content">
-                    <img src="img/fragaMaia.webp" alt="Praça da Avenida Fraga Maia">
-                    <p>
-                        Próximo a Avenida Maria Quiteria, a avenida Fraga Maia é uma das principais avenidas da cidade,
-                        possui árvores lindas e um belo passeio em meio a Avenida para quem gosta de passear e se exercitar.
-                        Também possui diversos pontos de venda em volta, <em>Fast Foods</em>, <em>Restaurantes</em>, <em>Sorveterias</em>
-                        e muito mais!
-                    </p>
-                </div>
-                <p>
-                    A Fraga Maia sempre é movimentada, um espaço excelente para quem quer se divertir! O que será que
-                    estão falando a respeito no <a href="https://x.com/#!/search/Avenida%20Fraga%20Maia" target="_blank"
-                    aria-label="Pesquisar Avenida Fraga Maia no Twitter (abre em nova janela)">abrir nova página de pesquisa do Twitter</a>
-                </p>
-            </article>
-
-            <!-- Seção 2 de artigo da página -->
-            <article role="article">
-                <h3>Shopping Popular Feiraguay</h3>
-                <div class="img-content">
-                    <img src="img/Feiraguay.jpeg" alt="O feiraguay">
-                    <p>
-                        O Feiraguay é o shopping mais popular de feira, la você encontra de tudo, desde brinquedos à
-                        roupas, itens para motos e carros, itens para celulares e tudo mais que possa imaginar, do mais
-                        piratex ao original, la vende de tudo. “Feiraguay: para todos os bolsos e necessidades” - by
-                        José Cláudio Rocha
-                    </p>
-                </div>
-                <p>
-                    Veja as principais noticias da região! <a href='https://www.instagram.com/feiraguayfs.oficial/'
-                    target='_blank' >abrir nova página do Instagram do Feiraguay</a>
-                </p>
-            </article>
-
-            <!-- Seção 3 de artigo da página -->
-            <article role="article">
-                <h3>Parque Municipal Erivaldo Cerqueira</h3>
-                <div class="img-content">
-                    <img src="img/ParqueErivaldo.jpg" alt="Imagem do parque erivaldo com plantas">
-                    <p>
-                        Principal ponto turistico para quem gosta de sair em um final de semana com a familia, andar por
-                        perto de um lago, vê aves, arvores, apreciar a natureza. Há também a possibilidade de nadar no 
-                        lago, porém tome cuidado, a ultima vez que alguem fez isso acabou preso... Então não deixe que te
-                        vejam!
-                    </p>
-                </div>
-                <p>
-                    Veja como chegar ao parque: <a href="https://maps.app.goo.gl/HHP4XPe7hx5aUQg78" target="_blank" >abrir nova página para a localização 
-                    no google maps</a>
-                </p>
-            </article>
-            <!-- Link para retornar ao inicio da pagina -->
-            <!-- <a href="#voltarInicio" accesskey="2">voltarInicio</a> -->
-            <button style="width: 100%; margin-bottom: 1%; background-color: var(--button-color); font: bold; font-size: larger;" type="button" onclick="window.location.href='#voltarInicio'" class="btn btn-primary">Voltar ao inicio</button>
-        </section>
-
-        <!-- Rodape do site -->
-        <footer role="contentinfo">
-            <!-- fonte cor branca -->
-            <section style="color: white;">
-                <img src="img/simbolo_acessibilidade.png" alt="Simbolo Internacional da Acessibilidade">
-                <h2>IFBA campus Feira de Santana</h2>
-            </section>
-        </footer>
-        
-        <!-- Script de acessibilidade -->
-        <script src="js/script.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
-    </body>
+      <h2>Os 3 principais locais para visitar</h2>
+      
+      <!-- Artigo 1 -->
+      <article>
+        <h3>Avenida Fraga Maia</h3>
+        <figure class="img-content">
+          <img src="img/fragaMaia.webp" alt="Vista da Praça da Avenida Fraga Maia com árvores e pontos de venda">
+          <figcaption>
+            Próximo à Avenida Maria Quitéria, a Avenida Fraga Maia é uma das principais da cidade, ideal para passeios e exercícios.
+          </figcaption>
+        </figure>
+        <p>
+          A Fraga Maia é sempre movimentada, oferecendo um excelente espaço para diversão. Confira o que estão dizendo sobre ela no 
+          <a href="https://x.com/#!/search/Avenida%20Fraga%20Maia" target="_blank" rel="noopener" aria-label="Pesquisar Avenida Fraga Maia no Twitter (abre em nova janela)">Twitter</a>.
+        </p>
+      </article>
+      
+      <!-- Artigo 2 -->
+      <article>
+        <h3>Shopping Popular Feiraguay</h3>
+        <figure class="img-content">
+          <img src="img/Feiraguay.jpeg" alt="Imagem do Shopping Popular Feiraguay">
+          <figcaption>
+            O Feiraguay é o shopping mais popular de Feira, oferecendo uma ampla variedade de produtos.
+          </figcaption>
+        </figure>
+        <p>
+          Confira as principais notícias da região no 
+          <a href="https://www.instagram.com/feiraguayfs.oficial/" target="_blank" rel="noopener" aria-label="Abrir página do Instagram do Feiraguay (abre em nova janela)">Instagram</a>.
+        </p>
+      </article>
+      
+      <!-- Artigo 3 -->
+      <article>
+        <h3>Parque Municipal Erivaldo Cerqueira</h3>
+        <figure class="img-content">
+          <img src="img/ParqueErivaldo.jpg" alt="Parque Municipal Erivaldo Cerqueira com área verde e lago">
+          <figcaption>
+            Um excelente local para passar o final de semana com a família, com opções de lazer e contato com a natureza.
+          </figcaption>
+        </figure>
+        <p>
+          Veja como chegar ao parque pelo 
+          <a href="https://maps.app.goo.gl/HHP4XPe7hx5aUQg78" target="_blank" rel="noopener" aria-label="Abrir localização no Google Maps (abre em nova janela)">Google Maps</a>.
+        </p>
+      </article>
+      
+      <!-- Botão de retorno -->
+      <button type="button" class="btn btn-primary voltar-inicio" onclick="window.location.href='#cabecalho'" aria-label="Voltar ao topo da página">
+        Retornar ao topo da página
+      </button>
+    </main>
+    
+    <!-- Rodapé -->
+    <footer role="contentinfo">
+      <section>
+        <img src="img/simbolo_acessibilidade.png" alt="Símbolo Internacional da Acessibilidade">
+        <h2>IFBA campus Feira de Santana</h2>
+      </section>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+  </body>
 </html>
-
-
-
-
-
-
-
