@@ -174,4 +174,150 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
         }
     });
+
+  /**
+   * Adiciona estilos CSS específicos para melhorar o foco visual
+   * Isso ajuda usuários que navegam com teclado a identificar o elemento selecionado
+   */
+  const style = document.createElement("style");
+  style.textContent = `
+    /* Estilo de foco para elementos interativos */
+    a:focus, 
+    button:focus, 
+    input:focus, 
+    textarea:focus, 
+    [tabindex="0"]:focus {
+      outline: 3px solid var(--terciaria) !important;
+      outline-offset: 2px;
+      box-shadow: 0 0 8px rgba(138, 179, 207, 0.8) !important;
+      transition: all 0.2s ease;
+    }
+    
+    /* Estilo de foco para botões */
+    button:focus, 
+    .btn-enviar:focus, 
+    .btn-limpar:focus,
+    .carousel-control-prev:focus,
+    .carousel-control-next:focus,
+    .btn-acessibilidade:focus,
+    .btn-topo:focus {
+      background-color: var(--quaternaria) !important;
+      color: var(--branco) !important;
+      transform: scale(1.05) !important;
+      transition: all 0.2s ease;
+    }
+    
+    /* Estilo específico para o botão Saiba Mais */
+    a.btn-saibaMais:focus {
+      background-color: var(--branco) !important;
+      color: var(--quaternaria) !important;
+      transform: scale(1.05) !important;
+      outline: 3px solid var(--terciaria) !important;
+      outline-offset: 2px;
+      box-shadow: 0 0 8px rgba(138, 179, 207, 0.8) !important;
+      transition: all 0.2s ease;
+      position: relative;
+      z-index: 10;
+    }
+    
+    /* Estilo de foco para links de navegação */
+    nav a:focus h5 {
+      color: var(--branco) !important;
+      background-color: var(--quaternaria) !important;
+      transform: translateY(-2px);
+      transition: all 0.2s ease;
+    }
+    
+    /* Estilo de foco para links em linhas */
+    .links-row a:focus {
+      color: var(--secundaria) !important;
+      background-color: var(--quaternaria) !important;
+      border-radius: 4px;
+      transform: translateY(-2px);
+    }
+    
+    /* Estilo de foco para ícones de redes sociais */
+    .fa-brands:focus {
+      color: var(--branco) !important;
+      transform: scale(1.2);
+    }
+  `;
+  document.head.appendChild(style);
+
+    // Coleta todos os elementos focáveis para navegação por teclado
+  const focusableElements = Array.from(
+    document.querySelectorAll(
+      'a[href], button, input, textarea, select, [tabindex="0"]'
+    )
+  ).filter((el) => el.offsetWidth > 0 || el.offsetHeight > 0); // Filtra elementos visíveis
+
+  // Tratamento específico para o botão "Saiba Mais"
+  const saibaMaisBtn = document.querySelector(".btn-saibaMais");
+  if (saibaMaisBtn) {
+    // Garante que o botão "Saiba Mais" seja focável mesmo que não esteja na lista
+    if (!focusableElements.includes(saibaMaisBtn)) {
+      focusableElements.push(saibaMaisBtn);
+    }
+
+    // Adiciona manipulador de eventos específico para garantir que o Enter funcione
+    saibaMaisBtn.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        this.click();
+      }
+    });
+  }
+
+    /**
+   * Adiciona suporte para navegação por teclado personalizada
+   * Permite que usuários naveguem entre elementos usando as teclas de seta
+   */
+  document.addEventListener("keydown", function (e) {
+    const activeElement = document.activeElement;
+    const currentIndex = focusableElements.indexOf(activeElement);
+
+    // Verifica se algum elemento focável está ativo
+    if (currentIndex !== -1) {
+      let nextIndex;
+
+      // Determina qual ação tomar com base na tecla pressionada
+      switch (e.key) {
+        case "ArrowRight":
+        case "ArrowDown":
+          // Se a tecla for seta para direita ou para baixo,
+          // move o foco para o próximo elemento
+          nextIndex = (currentIndex + 1) % focusableElements.length;
+          e.preventDefault();
+          focusableElements[nextIndex].focus();
+          break;
+        case "ArrowLeft":
+        case "ArrowUp":
+          // Se a tecla for seta para esquerda ou para cima,
+          // move o foco para o elemento anterior
+          nextIndex =
+            (currentIndex - 1 + focusableElements.length) %
+            focusableElements.length;
+          e.preventDefault();
+          focusableElements[nextIndex].focus();
+          break;
+        case "Enter":
+          // Se a tecla for Enter, simula um clique no elemento
+          // exceto para campos de texto onde Enter tem outra função
+          if (
+            activeElement.tagName === "A" ||
+            activeElement.tagName === "BUTTON"
+          ) {
+            e.preventDefault();
+            activeElement.click();
+          } else if (
+            activeElement.tagName !== "INPUT" &&
+            activeElement.tagName !== "TEXTAREA"
+          ) {
+            e.preventDefault();
+            activeElement.click();
+          }
+          break;
+      }
+    }
+  });
 });

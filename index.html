@@ -14,19 +14,14 @@
   </head>
   <body>
     <!-- Skip link visível ao receber foco -->
-    <a href="#conteudo" class="skip-link">Ir para o conteúdo principal</a>
+    <a href="#conteudo" id="cabecalho" class="skip-link" tabindex="0">Ir para o conteúdo principal</a>
     
     <!-- Cabeçalho -->
-    <header role="banner" id="cabecalho">
+    <header role="banner">
       <div class="container-header">
-        <img src="img/bandeiraBrasil.jpg" alt="Bandeira do Brasil feita por Don L">
-        <h1>O que mais gosto em Feira de Santana</h1>
-        <nav role="navigation">
-          <ul id="atalhos">
-            <li><a href="#conteudo" accesskey="1">Ir para conteúdo</a></li>
-            <!-- Possível uso futuro de atalhos -->
-          </ul>
-        </nav>
+        <img tabindex="-1" src="img/bandeiraBrasil.jpg" alt="Bandeira do Brasil feita por Don L">
+        <h1 tabindex="0">O que mais gosto em Feira de Santana</h1>
+        
         <!-- Barra de acessibilidade -->
         <div class="acessibilidade">
           <button id="contraste" type="button" aria-label="Ativar alto contraste">
@@ -49,71 +44,326 @@
       </div>
     </header>
     
-    <!-- Conteúdo Principal -->
-    <main id="conteudo" role="main">
-        <!-- Introdução -->
-        <section class="introducao">
-            <h2>Feira de Santana, a princesa do sertão!</h2>
-            <p>
-            Feira de Santana é um município brasileiro no interior da Bahia, Região Nordeste do Brasil. 
-            É a cidade-sede da Região Metropolitana de Feira de Santana e da Região Imediata de Feira de 
-            Santana, formada por 33 cidades. Está localizada no centro-norte baiano, a 108 km de Salvador, 
-            conectada pela BR-324.
-            </p>
+    <main role="main">
+
+      <!-- Introdução -->
+      <section class="introducao">
+
+        <h2 tabindex="0">Feira de Santana, a princesa do sertão!</h2>
+        <p tabindex="0">
+          Feira de Santana é um município brasileiro no interior da Bahia, Região Nordeste do Brasil. 
+          É a cidade-sede da Região Metropolitana de Feira de Santana e da Região Imediata de Feira de 
+          Santana, formada por 33 cidades. Está localizada no centro-norte baiano, a 108 km de Salvador, 
+          conectada pela BR-324.
+        </p>
+      
+        <div class="container-carrosel">
+          <!-- ACESSIBILIDADE: Carrossel com atributos ARIA para descrever seu papel e propósito -->
+          <div
+            id="carouselExemplo"
+            class="carousel slide"
+            aria-roledescription="carrossel"
+            data-bs-interval="7000"
+            data-bs-pause="hover"
+          >
+            <div class="carousel-indicators">
+              <!-- ACESSIBILIDADE: Botões de carrossel com atributos aria para controle e indicação -->
+              <button
+                type="button"
+                data-bs-target="#carouselExemplo"
+                data-bs-slide-to="0"
+                class="active"
+                aria-current="true"
+                aria-label=""
+                tabindex="-1"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExemplo"
+                data-bs-slide-to="1"
+                aria-label=""
+                tabindex="-1"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExemplo"
+                data-bs-slide-to="2"
+                aria-label=""
+                tabindex="-1"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExemplo"
+                data-bs-slide-to="3"
+                aria-label=""
+                tabindex="-1"
+              ></button>
+            </div>
+            <div class="carousel-inner" style="height: 20rem">
+              <!-- ACESSIBILIDADE: Uso de aria-live para anunciar mudanças de conteúdo dinâmico -->
+              <div class="carousel-item active" aria-live="polite">
+                <!-- ACESSIBILIDADE: Textos alternativos detalhados para imagens -->
+                <img
+                  src="img/lovFeira.png"
+                  class="d-block w-100"
+                  alt="Mouse de computador alternativo com esfera na parte superior para movimento com dedos ao invés da mão inteira"
+                >
+              </div>
+              <div class="carousel-item" aria-live="polite">
+                <img
+                  src="img/eye.png"
+                  class="d-block w-100"
+                  alt="Uma mão utilizando uma órtese adaptada para facilitar a digitação em teclado para pessoas com mobilidade reduzida"
+                >
+              </div>
+              <div class="carousel-item" aria-live="polite">
+                <img
+                  src="img/eye.png"
+                  class="d-block w-100"
+                  alt="Logotipo do software JAWS, um dos leitores de tela mais populares para pessoas com deficiência visual"
+                >
+              </div>
+              <div class="carousel-item" aria-live="polite">
+                <img
+                  src="img/eye.png"
+                  class="d-block w-100"
+                  alt="Teclado de computador com letras adesivas ampliadas para melhor visualização por pessoas com baixa visão"
+                >
+              </div>
+            </div>
+            <!-- Controles de carrossel com rótulos e texto visualmente oculto -->
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselExemplo"
+              data-bs-slide="prev"
+              tabindex="0"
+              aria-label="Slide anterior"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <!-- ACESSIBILIDADE: Classe visually-hidden mantém texto para leitores de tela -->
+              <span class="visually-hidden">Anterior</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#carouselExemplo"
+              data-bs-slide="next"
+              tabindex="0"
+              aria-label="Próximo slide"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+            </button>
+          </div>
+        </div>
+
       </section>
 
+      <section class="Principal">
+        <!-- Conteúdo Principal -->
+        <h2 
+          id="conteudo" 
+          tabindex="0"
+        >
+        Os 3 principais locais para visitar</h2>
+        
+        <!-- Artigo 1 -->
+        <article>
+          <h3 tabindex="0">Avenida Fraga Maia</h3>
+          <div class="container-article">
+            <img 
+                tabindex="0" 
+                src="img/fragaMaia.webp" 
+                alt="Vista da Praça da Avenida Fraga Maia com árvores e pontos de venda"
+            >
+            <div class="container-texto">
+              <p tabindex="0">
+                Passear pela Avenida Fraga Maia, em Feira de Santana, é uma experiência que mistura a vibração 
+                da cidade com a tranquilidade de uma das suas vias mais movimentadas. Localizada em uma das 
+                áreas centrais da cidade, a avenida é um verdadeiro ponto de encontro para feirenses e visitantes. 
+                Ao caminhar por ela, é impossível não perceber a energia que emana das lojas, das pessoas e até 
+                do próprio ambiente.
+              </p>
+              <p tabindex="0">
+                Com um mix de comércios variados, desde lojas de roupas e calçados até opções de alimentação, 
+                a Avenida Fraga Maia oferece aos seus frequentadores um passeio cheio de possibilidades. 
+                As calçadas largas convidam ao passeio tranquilo, e quem está por ali pode aproveitar para 
+                fazer compras ou simplesmente observar o movimento, sempre animado, mas sem a pressa dos grandes 
+                centros urbanos. Confira o que estão dizendo sobre ela no 
+                <a href="https://x.com/#!/search/Avenida%20Fraga%20Maia" target="_blank" rel="noopener" 
+                aria-label="Pesquisar Avenida Fraga Maia no Twitter (abre em nova janela)">Twitter (Abre em nova janela)</a>.
+              </p>
+            </div>
+          </div>
+        </article>
+        
+        <!-- Artigo 2 -->
+        <article>
+          <h3 tabindex="0">Shopping Popular Feiraguay</h3>
 
-      <h2>Os 3 principais locais para visitar</h2>
+          <div class="container-article">
+
+            <img  tabindex="0" src="img/Feiraguay.jpeg" alt="Imagem do Shopping Popular Feiraguay">
+
+            <div class="container-texto">
+              <p tabindex="0">
+                O Feiraguay é um evento tradicional realizado em Feira de Santana, na Bahia, que 
+                se destaca como um dos maiores e mais importantes pontos de encontro comercial e 
+                cultural da região. A feira, que acontece anualmente, reúne uma variedade de produtos, 
+                desde roupas, calçados e acessórios, até artigos de decoração, eletrônicos e alimentos 
+                típicos da cultura baiana. Além disso, a Feiraguay atrai milhares de visitantes, não só 
+                da cidade, mas também de outras localidades do estado e até de fora da Bahia, gerando 
+                um grande fluxo econômico e fomentando o turismo na região.
+              </p>
+              <p tabindex="0">
+                O evento é uma verdadeira vitrine para o comércio local, oferecendo uma grande 
+                diversidade de opções para os consumidores, com preços acessíveis e a possibilidade 
+                de barganhas. Para os expositores, é uma excelente oportunidade de aumentar a 
+                visibilidade de seus produtos e expandir suas redes de contato e vendas.Confira as 
+                principais notícias da região no 
+                <a href="https://www.instagram.com/feiraguayfs.oficial/" target="_blank" rel="noopener" 
+                aria-label="Abrir página do Instagram do Feiraguay (abre em nova janela)">Instagram (Abre em nova janela)</a>.
+              </p>
+            </div>
+          </div>
+        </article>
+        
+        <!-- Artigo 3 -->
+        <article>
+          <h3 tabindex="0">Parque Municipal Erivaldo Cerqueira</h3>
+
+          <div class="container-article">
+            <img  
+              tabindex="0" 
+              src="img/ParqueErivaldo.jpg" 
+              alt="Parque Municipal Erivaldo Cerqueira com área verde e lago"
+            >
+            <div class="container-texto">
+              <p tabindex="0">
+                Um dos principais espaços de lazer e convivência da cidade, oferecendo um ambiente 
+                tranquilo e natural para os moradores e visitantes. O parque, que leva o nome de um 
+                importante nome da história local, é um verdadeiro pulmão verde no meio da área urbana, 
+                proporcionando um refúgio para quem busca contato com a natureza e momentos de lazer ao
+                ar livre.
+              </p>
+              <p tabindex="0">
+                Inaugurado com o objetivo de preservar a biodiversidade da região e promover a qualidade 
+                de vida dos cidadãos, o parque conta com uma infraestrutura que inclui trilhas, lagoas, 
+                áreas para piqueniques, playgrounds e espaços destinados à prática de atividades físicas. 
+                O local também é ideal para caminhadas, corridas e passeios em família. Veja como chegar 
+                ao parque pelo 
+                <a href="https://maps.app.goo.gl/HHP4XPe7hx5aUQg78" target="_blank" rel="noopener" 
+                aria-label="Abrir localização no Google Maps (abre em nova janela)">Google Maps (Abre em nova janela)</a>.
+              </p>
+            </div>
+          </div>
+        </article>
+        
+        <!-- Botão de retorno -->
+        <button 
+          type="button" 
+          class="btn btn-primary voltar-inicio" 
+          onclick="window.location.href='#cabecalho'" 
+          aria-label="Voltar ao topo da página">
+          Retornar ao topo da página
+        </button>
+      </section>
       
-      <!-- Artigo 1 -->
-      <article>
-        <h3>Avenida Fraga Maia</h3>
-        <figure class="img-content">
-          <img src="img/fragaMaia.webp" alt="Vista da Praça da Avenida Fraga Maia com árvores e pontos de venda">
-          <figcaption>
-            Próximo à Avenida Maria Quitéria, a Avenida Fraga Maia é uma das principais da cidade, ideal para passeios e exercícios.
-          </figcaption>
-        </figure>
-        <p>
-          A Fraga Maia é sempre movimentada, oferecendo um excelente espaço para diversão. Confira o que estão dizendo sobre ela no 
-          <a href="https://x.com/#!/search/Avenida%20Fraga%20Maia" target="_blank" rel="noopener" aria-label="Pesquisar Avenida Fraga Maia no Twitter (abre em nova janela)">Twitter</a>.
-        </p>
-      </article>
-      
-      <!-- Artigo 2 -->
-      <article>
-        <h3>Shopping Popular Feiraguay</h3>
-        <figure class="img-content">
-          <img src="img/Feiraguay.jpeg" alt="Imagem do Shopping Popular Feiraguay">
-          <figcaption>
-            O Feiraguay é o shopping mais popular de Feira, oferecendo uma ampla variedade de produtos.
-          </figcaption>
-        </figure>
-        <p>
-          Confira as principais notícias da região no 
-          <a href="https://www.instagram.com/feiraguayfs.oficial/" target="_blank" rel="noopener" aria-label="Abrir página do Instagram do Feiraguay (abre em nova janela)">Instagram</a>.
-        </p>
-      </article>
-      
-      <!-- Artigo 3 -->
-      <article>
-        <h3>Parque Municipal Erivaldo Cerqueira</h3>
-        <figure class="img-content">
-          <img src="img/ParqueErivaldo.jpg" alt="Parque Municipal Erivaldo Cerqueira com área verde e lago">
-          <figcaption>
-            Um excelente local para passar o final de semana com a família, com opções de lazer e contato com a natureza.
-          </figcaption>
-        </figure>
-        <p>
-          Veja como chegar ao parque pelo 
-          <a href="https://maps.app.goo.gl/HHP4XPe7hx5aUQg78" target="_blank" rel="noopener" aria-label="Abrir localização no Google Maps (abre em nova janela)">Google Maps</a>.
-        </p>
-      </article>
-      
-      <!-- Botão de retorno -->
-      <button type="button" class="btn btn-primary voltar-inicio" onclick="window.location.href='#cabecalho'" aria-label="Voltar ao topo da página">
-        Retornar ao topo da página
-      </button>
+      <section class="formulario">
+        <div class="conteudo">
+          <div class="container-form">
+            <h2 class="titulo-form" id="titulo-form" tabindex="0">
+              Entre em Contato
+            </h2>
+            <!-- ACESSIBILIDADE: Formulário com role e aria-labelledby -->
+            <form
+              class="formulario-contato"
+              aria-labelledby="titulo-form"
+            >
+              <div class="campo-form">
+                <!-- ACESSIBILIDADE: Label associado ao input através do atributo for -->
+                <label for="nome">Nome:</label>
+                <!-- ACESSIBILIDADE: Input com atributos de acessibilidade -->
+                <input
+                  type="text"
+                  id="nome"
+                  name="nome"
+                  placeholder="Digite seu nome"
+                  required
+                  tabindex="0"
+                  aria-required="true"
+                  aria-describedby="nome-desc"
+                >
+                <!-- ACESSIBILIDADE: Descrição adicional para o campo, visível apenas para leitores de tela -->
+                <div id="nome-desc" class="sr-only">
+                  Informe seu nome completo
+                </div>
+              </div>
+
+              <div class="campo-form">
+                <label for="email">Email:</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Digite seu email"
+                  required
+                  tabindex="0"
+                  aria-required="true"
+                  aria-describedby="email-desc"
+                >
+                <div id="email-desc" class="sr-only">
+                  Informe um email válido para contato
+                </div>
+              </div>
+
+              <div class="campo-form">
+                <label for="mensagem">Mensagem:</label>
+                <textarea
+                  id="mensagem"
+                  name="mensagem"
+                  rows="5"
+                  placeholder="Digite sua mensagem"
+                  required
+                  tabindex="0"
+                  aria-required="true"
+                  aria-describedby="mensagem-desc"
+                ></textarea>
+                <div id="mensagem-desc" class="sr-only">
+                  Escreva sua dúvida ou comentário
+                </div>
+              </div>
+
+              <div class="botoes-form">
+                <!-- ACESSIBILIDADE: Botões com rótulos claros e acesso via teclado -->
+                <button
+                  type="submit"
+                  class="btn-enviar"
+                  tabindex="0"
+                  aria-label="Enviar formulário"
+                >
+                  Enviar
+                </button>
+                <button
+                  type="reset"
+                  class="btn-limpar"
+                  tabindex="0"
+                  aria-label="Limpar todos os campos do formulário"
+                >
+                  Limpar
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
     </main>
     
     <!-- Rodapé -->
