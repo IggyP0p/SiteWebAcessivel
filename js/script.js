@@ -197,8 +197,6 @@ document.addEventListener('DOMContentLoaded', function() {
     button:focus, 
     .btn-enviar:focus, 
     .btn-limpar:focus,
-    .carousel-control-prev:focus,
-    .carousel-control-next:focus,
     .btn-acessibilidade:focus,
     .btn-topo:focus {
       background-color: var(--quaternaria) !important;

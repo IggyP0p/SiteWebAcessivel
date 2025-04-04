@@ -8,6 +8,7 @@
     --articles-titulo: #000;
     --articles-letra: #000;
 
+    --content-width: 60rem;
 }
 
 * {
@@ -50,7 +51,7 @@ header img {
 
 header h1 {
     color: var(--cor-titulo);
-    font-size: 24px;
+    font-size: 1.5rem;
     flex: 1 1 auto;
     text-align: center;
     margin: 5px;
@@ -91,6 +92,13 @@ main {
     justify-content: space-between;
 }
 
+main img {
+    height: 30rem;
+    border: #000 solid 0.1rem;
+    border-radius: 1%;
+    align-self: center;
+}
+
 /* Introdução */
 .introducao h2 {
     font-size: 1.8rem;
@@ -122,6 +130,7 @@ article {
 
 .container-texto {
     padding-left: 1rem;
+    font-size: 1rem;
 }
 
 article h3 {
@@ -320,21 +329,6 @@ button.btn {
 .container-carrosel{
     border: var(--header-color) solid 2px;
 
-}
-
-.carousel {
-    border-radius: var(--border-radius);
-    overflow: hidden;
-}
-  
-.carousel-inner {
-    height: 20rem;
-}
-  
-.carousel-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
 }
 
 /* Estados de foco para acessibilidade via teclado */
