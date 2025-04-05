@@ -3,12 +3,13 @@
     --cor-fundo: #ffffff;
     --cor-titulo: #cff167;
     --header-color: #103549;
+
     --button-color: #397392;
+    --button-hover: #007bbd;
+
     --articles-fundo: #dbd6d6;
     --articles-titulo: #000;
     --articles-letra: #000;
-
-
 }
 
 * {
@@ -324,58 +325,12 @@ button.btn {
 
 }
 
-/* Estados de foco para acessibilidade via teclado */
-a:focus,
-button:focus,
-input:focus,
-textarea:focus,
-[tabindex="0"]:focus {
-  outline: 3px solid var(--terciaria);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: var(--transition-fast);
-}
-
 /* Estados de foco para links e botões */
 a:focus {
-  color: #000 !important;
+  color: #000;
   text-decoration: underline;
   box-shadow: 0 0 0 3px var(--cor-fundo);
   transform: translateY(-2px);
-}
-
-/* Estados de foco para elementos de formulário */
-input:focus,
-textarea:focus {
-  border-color: var(--quaternaria);
-  box-shadow: 0 0 0 3px var(--terciaria);
-  outline: none;
-  background-color: var(--branco);
-}
-
-/* Maior especificidade para focus-visible */
-:focus-visible {
-  outline: 3px solid var(--cor-titulo);
-  outline-offset: 2px;
-}
-
-button:focus,
-.btn-enviar:focus,
-.btn-limpar:focus,
-.btn-saibaMais:focus,
-.btn-topo:focus,
-.btn-acessibilidade:focus {
-  box-shadow: 0 0 0 3px var(--terciaria);
-  transform: scale(1.05);
-  outline: none;
-}
-
-/* Estados de foco para elementos de formulário */
-input:focus,
-textarea:focus {
-  border-color: var(--quaternaria);
-  box-shadow: 0 0 0 3px var(--terciaria);
-  outline: none;
-  background-color: var(--branco);
 }
 
 .Principal{
@@ -383,105 +338,95 @@ textarea:focus {
 }
 
 .container-form {
-    background-color: var(--button-color);
+    background-color: var(--articles-fundo);
     width: 50rem;
-    padding: var(--spacing-md);
-    border-radius: var(--border-radius);
+    padding: 2rem;
+    border-radius: 10px;
     margin: 0 auto;
 }
   
-  .titulo-form {
-    color: var(--preto);
+.titulo-form {
     text-align: center;
-    margin-bottom: var(--spacing-md);
+    margin-bottom: 1rem;
     font-weight: 600;
-    font-size: var(--font-h3);
-  }
+    font-size: 1.3rem;
+}
   
-  .formulario-contato {
+.formulario-contato {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-sm);
-  }
-  
-  .campo-form {
+    gap: 1rem;
+}
+
+.campo-form {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-xs);
-  }
-  
-  .campo-form label {
-    color: var(--preto);
+    gap: 0.5rem;
+}
+
+.campo-form label {
+    color: #000;
     font-weight: bold;
-    font-size: var(--font-small);
-  }
-  
-  .campo-form input,
-  .campo-form textarea {
+    font-size: 1rem;
+}
+
+.campo-form input,
+.campo-form textarea {
     padding: 0.6rem;
-    border: 2px solid var(--quaternaria);
+    border: 2px solid #000;
     border-radius: 4px;
-    background-color: var(--primaria);
-    color: var(--preto);
-    font-size: var(--font-small);
+    background-color: #fff;
+    font-size: 1rem;
     width: 100%;
-  }
-  
-  .campo-form textarea {
-    resize: vertical;
-    height: 120px;
-    min-height: 100px;
-    max-height: 200px;
-    overflow-y: auto;
-  }
-  
-  .botoes-form {
+}
+
+.botoes-form {
     display: flex;
-    gap: var(--spacing-sm);
+    gap: 1rem;
     justify-content: center;
-    margin-top: var(--spacing-sm);
-  }
-  
-  .btn-enviar,
-  .btn-limpar {
+    margin-top: 1rem;
+}
+
+.btn-enviar,
+.btn-limpar {
     display: flex;
     align-items: center;
-    gap: var(--spacing-xs);
+    gap: 0.5rem;
     padding: 0.6rem 1.5rem;
-    background-color: var(--terciaria);
-    color: var(--primaria);
+    background-color: var(--button-color);
+    color: #fff;
     text-decoration: none;
     border: none;
     border-radius: 4px;
     font-weight: bold;
-    font-size: var(--font-small);
+    font-size: 0.9rem;
     cursor: pointer;
-    transition: background-color var(--transition-default),
-      transform var(--transition-default), box-shadow var(--transition-default);
-  }
-  
-  .btn-enviar:hover,
-  .btn-limpar:hover {
-    background-color: var(--quaternaria);
+    transition: background-color 0.3s ease,
+    transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-enviar:hover,
+.btn-limpar:hover {
+    background-color: var(--button-hover);
     transform: translateY(-3px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  .contador-caracteres {
+}
+
+.contador-caracteres {
     display: block;
-    font-size: var(--font-small);
+    font-size: 0.9rem;
     color: #666;
     margin-top: 5px;
     text-align: right;
-    transition: color var(--transition-default);
-  }
-  
-  .contador-alerta {
+    transition: color 0.3s ease;
+}
+
+.contador-alerta {
     color: orange;
     font-weight: bold;
-  }
-  
-  .contador-limite {
+}
+
+.contador-limite {
     color: red;
     font-weight: bold;
-  }
+}

@@ -191,46 +191,21 @@ document.addEventListener('DOMContentLoaded', function() {
       outline-offset: 2px;
       box-shadow: 0 0 8px rgb(0, 252, 42) !important;
       transition: all 0.2s ease;
-      padding: 0.1rem;
     }
     
     /* Estilo de foco para botões */
-    button:focus, 
     .btn-enviar:focus, 
-    .btn-limpar:focus,
-    .btn-acessibilidade:focus,
-    .btn-topo:focus {
-      background-color: var(--quaternaria) !important;
-      color: var(--branco) !important;
+    .btn-limpar:focus {
+      background-color: var(--button-hover) !important;
+      color: #fff !important;
       transform: scale(1.05) !important;
       transition: all 0.2s ease;
     }
-    
-    /* Estilo de foco para links de navegação */
-    nav a:focus h5 {
-      color: var(--branco) !important;
-      background-color: var(--quaternaria) !important;
-      transform: translateY(-2px);
-      transition: all 0.2s ease;
-    }
-    
-    /* Estilo de foco para links em linhas */
-    .links-row a:focus {
-      color: var(--secundaria) !important;
-      background-color: var(--quaternaria) !important;
-      border-radius: 4px;
-      transform: translateY(-2px);
-    }
-    
-    /* Estilo de foco para ícones de redes sociais */
-    .fa-brands:focus {
-      color: var(--branco) !important;
-      transform: scale(1.2);
-    }
   `;
+
   document.head.appendChild(style);
 
-    // Coleta todos os elementos focáveis para navegação por teclado
+  // Coleta todos os elementos focáveis para navegação por teclado
   const focusableElements = Array.from(
     document.querySelectorAll(
       'a[href], button, input, textarea, select, [tabindex="0"]'
