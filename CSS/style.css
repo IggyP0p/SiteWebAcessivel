@@ -4,11 +4,11 @@
     --cor-titulo: #cff167;
     --header-color: #103549;
     --button-color: #397392;
-    --articles-fundo: #fff;
+    --articles-fundo: #dbd6d6;
     --articles-titulo: #000;
     --articles-letra: #000;
 
-    --content-width: 60rem;
+
 }
 
 * {
@@ -89,17 +89,14 @@ main {
     padding: 10px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-}
-
-main img {
-    height: 30rem;
-    border: #000 solid 0.1rem;
-    border-radius: 1%;
-    align-self: center;
 }
 
 /* Introdução */
+.introducao {
+    display: flex;
+    flex-direction: column;
+}
+
 .introducao h2 {
     font-size: 1.8rem;
     text-align: center;
@@ -110,10 +107,17 @@ main img {
     text-align: justify;
 }
 
+.introducao img {
+    height: 30rem;
+    width: auto;
+    border: #000 solid 0.1rem;
+    border-radius: 1%;
+    align-self: center;
+}
+
 /* Artigos */
 article {
     background-color: var(--articles-fundo);
-    border: 2px solid #CCC;
     border-radius: 10px;
     margin-bottom: 20px;
     padding: 20px;
@@ -131,6 +135,7 @@ article {
 .container-texto {
     padding-left: 1rem;
     font-size: 1rem;
+    text-align: justify;
 }
 
 article h3 {
@@ -138,12 +143,6 @@ article h3 {
     color: var(--articles-titulo);
     margin-bottom: 10px;
     justify-self: flex-start;
-}
-
-article p {
-    margin-bottom: 10px;
-
-
 }
 
 article a {
@@ -325,12 +324,6 @@ button.btn {
 
 }
 
-/* Específico do carrossel */
-.container-carrosel{
-    border: var(--header-color) solid 2px;
-
-}
-
 /* Estados de foco para acessibilidade via teclado */
 a:focus,
 button:focus,
@@ -344,21 +337,10 @@ textarea:focus,
 
 /* Estados de foco para links e botões */
 a:focus {
-  color: var(--quaternaria) !important;
+  color: #000 !important;
   text-decoration: underline;
-  box-shadow: 0 0 0 3px var(--terciaria);
+  box-shadow: 0 0 0 3px var(--cor-fundo);
   transform: translateY(-2px);
-}
-
-button:focus,
-.btn-enviar:focus,
-.btn-limpar:focus,
-.btn-saibaMais:focus,
-.btn-topo:focus,
-.btn-acessibilidade:focus {
-  box-shadow: 0 0 0 3px var(--terciaria);
-  transform: scale(1.05);
-  outline: none;
 }
 
 /* Estados de foco para elementos de formulário */
@@ -370,50 +352,10 @@ textarea:focus {
   background-color: var(--branco);
 }
 
-/* Estados de foco para navegação */
-nav a:focus h5 {
-  background-color: var(--quaternaria);
-  color: var(--branco);
-  transform: translateY(-2px);
-}
-
-/* Estados de foco para links no rodapé */
-.links-row a:focus {
-  color: var(--secundaria);
-  background-color: var(--quaternaria);
-  border-radius: 4px;
-  outline: none;
-}
-
-/* Estados de foco para ícones de mídia social */
-.fa-brands:focus {
-  color: var(--branco);
-  transform: scale(1.2);
-}
-
 /* Maior especificidade para focus-visible */
 :focus-visible {
-  outline: 3px solid var(--terciaria);
+  outline: 3px solid var(--cor-titulo);
   outline-offset: 2px;
-}
-
-/* Estados de foco para acessibilidade via teclado */
-a:focus,
-button:focus,
-input:focus,
-textarea:focus,
-[tabindex="0"]:focus {
-  outline: 3px solid var(--terciaria);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: var(--transition-fast);
-}
-
-/* Estados de foco para links e botões */
-a:focus {
-  color: var(--quaternaria) !important;
-  text-decoration: underline;
-  box-shadow: 0 0 0 3px var(--terciaria);
-  transform: translateY(-2px);
 }
 
 button:focus,

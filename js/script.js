@@ -187,10 +187,11 @@ document.addEventListener('DOMContentLoaded', function() {
     input:focus, 
     textarea:focus, 
     [tabindex="0"]:focus {
-      outline: 3px solid var(--terciaria) !important;
+      outline: 3px solid rgb(0, 252, 42) !important;
       outline-offset: 2px;
-      box-shadow: 0 0 8px rgba(138, 179, 207, 0.8) !important;
+      box-shadow: 0 0 8px rgb(0, 252, 42) !important;
       transition: all 0.2s ease;
+      padding: 0.1rem;
     }
     
     /* Estilo de foco para botões */
@@ -203,19 +204,6 @@ document.addEventListener('DOMContentLoaded', function() {
       color: var(--branco) !important;
       transform: scale(1.05) !important;
       transition: all 0.2s ease;
-    }
-    
-    /* Estilo específico para o botão Saiba Mais */
-    a.btn-saibaMais:focus {
-      background-color: var(--branco) !important;
-      color: var(--quaternaria) !important;
-      transform: scale(1.05) !important;
-      outline: 3px solid var(--terciaria) !important;
-      outline-offset: 2px;
-      box-shadow: 0 0 8px rgba(138, 179, 207, 0.8) !important;
-      transition: all 0.2s ease;
-      position: relative;
-      z-index: 10;
     }
     
     /* Estilo de foco para links de navegação */
@@ -249,27 +237,10 @@ document.addEventListener('DOMContentLoaded', function() {
     )
   ).filter((el) => el.offsetWidth > 0 || el.offsetHeight > 0); // Filtra elementos visíveis
 
-  // Tratamento específico para o botão "Saiba Mais"
-  const saibaMaisBtn = document.querySelector(".btn-saibaMais");
-  if (saibaMaisBtn) {
-    // Garante que o botão "Saiba Mais" seja focável mesmo que não esteja na lista
-    if (!focusableElements.includes(saibaMaisBtn)) {
-      focusableElements.push(saibaMaisBtn);
-    }
-
-    // Adiciona manipulador de eventos específico para garantir que o Enter funcione
-    saibaMaisBtn.addEventListener("keydown", function (e) {
-      if (e.key === "Enter" || e.key === " ") {
-        e.preventDefault();
-        this.click();
-      }
-    });
-  }
-
-    /**
-   * Adiciona suporte para navegação por teclado personalizada
-   * Permite que usuários naveguem entre elementos usando as teclas de seta
-   */
+  /**
+ * Adiciona suporte para navegação por teclado personalizada
+ * Permite que usuários naveguem entre elementos usando as teclas de seta
+ */
   document.addEventListener("keydown", function (e) {
     const activeElement = document.activeElement;
     const currentIndex = focusableElements.indexOf(activeElement);
