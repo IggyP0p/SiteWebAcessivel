@@ -138,12 +138,6 @@ document.addEventListener('DOMContentLoaded', function() {
             leitorBtn.classList.add('ativo');
         }
     }
-    
-    // Verificar suporte para Speech Synthesis
-    if (!('speechSynthesis' in window)) {
-        leitorBtn.style.display = 'none';
-        console.log("Navegador não suporta síntese de voz");
-    }
 
     // Inicializar carregando preferências salvas
     restaurarPreferencias();
@@ -174,36 +168,6 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
         }
     });
-
-  /**
-   * Adiciona estilos CSS específicos para melhorar o foco visual
-   * Isso ajuda usuários que navegam com teclado a identificar o elemento selecionado
-   */
-  const style = document.createElement("style");
-  style.textContent = `
-    /* Estilo de foco para elementos interativos */
-    a:focus, 
-    button:focus, 
-    input:focus, 
-    textarea:focus, 
-    [tabindex="0"]:focus {
-      outline: 3px solid rgb(0, 252, 42) !important;
-      outline-offset: 2px;
-      box-shadow: 0 0 8px rgb(0, 252, 42) !important;
-      transition: all 0.2s ease;
-    }
-    
-    /* Estilo de foco para botões */
-    .btn-enviar:focus, 
-    .btn-limpar:focus {
-      background-color: var(--button-hover) !important;
-      color: #fff !important;
-      transform: scale(1.05) !important;
-      transition: all 0.2s ease;
-    }
-  `;
-
-  document.head.appendChild(style);
 
   // Coleta todos os elementos focáveis para navegação por teclado
   const focusableElements = Array.from(
