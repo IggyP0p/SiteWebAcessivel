@@ -306,6 +306,10 @@ button.btn {
         padding: 15px;
     }
 
+    .container-article {
+        flex-direction: column;
+    }
+
     article img {
         width: 40%;
         height: 40%;
