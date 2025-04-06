@@ -311,8 +311,8 @@ button.btn {
     }
 
     article img {
-        width: 40%;
-        height: 40%;
+        width: 60%;
+        height: 60%;
     }
 
     .container-texto {
@@ -340,7 +340,8 @@ button.btn {
 
     .img-content img,
     article img {
-        max-width: 100%;
+        width: 85%;
+        height: 85%;
     }
 
     footer {
