@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Adicionar eventos de foco e mouse para leitura de texto
-    document.querySelectorAll('p, h1, h2, h3, a, figcaption').forEach(element => {
+    document.querySelectorAll('p, h1, h2, h3, a').forEach(element => {
         element.addEventListener('mouseenter', function() {
             if (leituraAtiva && element !== elementoAtual) {
                 elementoAtual = element;
@@ -119,56 +119,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-
-    // Restaurar preferências salvas
-    function restaurarPreferencias() {
-        if (localStorage.getItem('altoContraste') === 'true') {
-            document.body.classList.add('alto-contraste');
-        }
-        
-        const tamanhoFonte = localStorage.getItem('tamanhoFonte');
-        if (tamanhoFonte === 'maior') {
-            document.body.classList.add('fonte-maior');
-        } else if (tamanhoFonte === 'enorme') {
-            document.body.classList.add('fonte-enorme');
-        }
-        
-        if (localStorage.getItem('leitorAtivo') === 'true') {
-            leituraAtiva = true;
-            leitorBtn.classList.add('ativo');
-        }
-    }
-
-    // Inicializar carregando preferências salvas
-    restaurarPreferencias();
     
-    // Adicionar atalhos de teclado para acessibilidade
-    document.addEventListener('keydown', function(e) {
-        // Alt + C: Toggle contraste
-        if (e.altKey && e.key === 'c') {
-            contrasteBtn.click();
-            e.preventDefault();
-        }
-        
-        // Alt + +: Aumentar fonte
-        if (e.altKey && e.key === '+') {
-            aumentarFonteBtn.click();
-            e.preventDefault();
-        }
-        
-        // Alt + -: Diminuir fonte
-        if (e.altKey && e.key === '-') {
-            diminuirFonteBtn.click();
-            e.preventDefault();
-        }
-        
-        // Alt + L: Ativar/desativar leitor
-        if (e.altKey && e.key === 'l') {
-            leitorBtn.click();
-            e.preventDefault();
-        }
-    });
-
   // Coleta todos os elementos focáveis para navegação por teclado
   const focusableElements = Array.from(
     document.querySelectorAll(

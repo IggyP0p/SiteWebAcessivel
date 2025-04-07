@@ -233,13 +233,23 @@ body.alto-contraste {
     color: #fff;
 }
 
+body.alto-contraste p,
 body.alto-contraste article {
     background-color: #000;
     color: #fff;
     border-color: #fff;
 }
 
-body.alto-contraste article h2 {
+body.alto-contraste .container-form h2 {
+    color: #000;
+}
+
+body.alto-contraste .introducao p,
+body.alto-contraste article {
+    border: #fff solid 1px;
+}
+
+body.alto-contraste article h3 {
     color: #fff;
     border-bottom-color: #fff;
 }
